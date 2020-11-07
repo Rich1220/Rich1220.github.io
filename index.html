@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#habit").click(function(){
+        $("p").hide(1000);
+        });
+    });
+    </script>
+    $(document).ready(function(){
     <head>
         <title>Rich's Website</title>
         <style type="text/css">
@@ -17,7 +26,7 @@
         <div class="head">陳宗佑的自我介紹</div>
         <div>
             <p class="text">我是陳宗佑，目前就讀輔大資工系，生日是12/20，射手座。</p>
-            <p class="text">平常的興趣是:</p>
+            <p class="text" id="habit">平常的興趣是:</p>
             <ul>
                 <li>玩遊戲</li>
                 <li>看電影</li>
