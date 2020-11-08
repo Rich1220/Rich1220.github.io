@@ -15,9 +15,12 @@
         </style>
         <script>
         $(document).ready(function(){
-        $("button").click(function(){
-            $("ul").();
+        $("#hide").click(function(){
+            $("ul").hide();
             });
+        $("#show").click(function)(){
+            $("ul").show();
+            };
         });
         </script>
     </head>
@@ -26,7 +29,8 @@
         <div>
             <p class="text" id="introduction">我是陳宗佑，目前就讀輔大資工系，生日是12/20，射手座。</p>
             <p class="text">平常的興趣是:</p>
-            <button>隱藏</button>
+            <button id="hide">隱藏</button>
+            <button id="show">顯示</button>
             <ul>
                 <li class="text">玩遊戲</li>
                 <li class="text">看電影</li>
