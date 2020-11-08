@@ -3,7 +3,6 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Rich's Website</title>
-    </head>
         <style type="text/css">
             .head{
                 background-color:#003344;color:#ffffff;font-weight:bold;font-size:30px;
@@ -14,16 +13,20 @@
                 font-size:medium;
             }
         </style>
-        <script type="text/javascript">
+        <script>
         $(document).ready(function(){
-            $("#introduction").addClass("animated bounce");
+        $("button").click(function(){
+            $("ul").hide();
+            });
         });
         </script>
+    </head>
     <body style="margin:0px;background-color:#dcdcdc;">
         <div class="head"">陳宗佑的自我介紹</div>
         <div>
             <p class="text" id="introduction">我是陳宗佑，目前就讀輔大資工系，生日是12/20，射手座。</p>
             <p class="text">平常的興趣是:</p>
+            <button>隱藏</button>
             <ul>
                 <li class="text">玩遊戲</li>
                 <li class="text">看電影</li>
