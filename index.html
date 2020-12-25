@@ -1,95 +1,60 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by TEMPLATED
-http://templated.co
-Released for free under the Creative Commons Attribution License
-
-Name       : Mongoose 
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20130920
-
--->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
-
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
+ <meta charset="UTF-8">
+ <title>抽签</title>
+ <script src="jquery-3.3.1.min.js"></script>
 </head>
+<script>
+ $(function(){
+ //定义一个数组，用于存储姓名
+ var names=[
+ "张三",
+ "李四",
+ "诸葛亮",
+ "刘备",
+ "曹操",
+ "韩非",
+ "张良",
+ "卫庄",
+ "盖聂",
+ ];
+ var time;//定义成员变量，用于接收定时器，也是为清除定时器作准备
+ var index;//定义成员变量，用于接收生成的随机数，也是为了给input框设置value值做准备
+ //先设置按钮的可用性(在点击按钮之前，开水按钮是可用的，结束按钮是不可用的)
+ $("#start").prop("disabled",false);//"disabled"代表可不可用的属性，系统默认的属性值是不可用；
+ $("#stop").prop("disabled",true);//false代表可用，true代表不可用
+ //给开始按钮绑定事件
+ $("#start").click(function(){
+ //设置定时器
+ time=setInterval(function(){
+ //设置爱按钮的可用性
+ $("#start").prop("disabled",true);
+ $("#stop").prop("disabled",false);
+ //生成随机数
+ index=Math.floor((Math.random()*10)+1);
+ //给input框设置value值
+ $("#name").prop("value",names[index]);
+ });
+ });
+ //给结束按钮设置绑定事件
+ $("#stop").click(function(){
+ //清除定时器
+ clearInterval(time);
+ //设置按钮状态
+ $("#start").prop("disabled",false);
+ $("#stop").prop("disabled",true);
+ });
+ });
+</script>
 <body>
-<div id="header-wrapper">
-<div id="header" class="container">
-	<div id="logo">
-		<h1><a href="#"><strong>Mongoose</strong></a></h1>
-	</div>
-	<div id="menu">
-		<ul>
-			<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-			<li><a href="#" accesskey="2" title="">Our Clients</a></li>
-			<li><a href="#" accesskey="3" title="">About Us</a></li>
-			<li><a href="#" accesskey="4" title="">Careers</a></li>
-			<li><a href="#" accesskey="5" title="">Contact Us</a></li>
-		</ul>
-	</div>
-</div></div>
-<div id="page" class="container">
-	<div id="content">
-		<div class="title">
-			<h2>Welcome to our website</h2>
-			<span class="byline">Mauris vulputate dolor sit amet nibh</span> </div>
-		<a href="#" class="image image-full"><img src="images/pic01.jpg" alt="" /></a>
-		<p>This is <strong>Mongoose </strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
-		<div id="onecolumn">
-			<div class="title">
-				<h2>Pellentesque quis lectus gravida blandit</h2>
-			</div>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem.</p>
-		</div>
-	</div>
-	<div id="sidebar">
-		<ul class="style1">
-			<li class="first">
-				<h3>Amet sed volutpat mauris</h3>
-				<p><a href="#">In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim. Aliquam erat volutpat.</a> Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-			</li>
-			<li>
-				<h3>Sagittis diam dolor sit amet</h3>
-				<p><a href="#">In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim. Aliquam erat volutpat.</a> Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-			</li>
-		</ul>
-		<div id="stwo-col">
-			<div class="sbox1">
-				<h2>Etiam rhoncus</h2>
-				<ul class="style2">
-					<li><a href="#">Semper quis egetmi dolore</a></li>
-					<li><a href="#">Quam turpis feugiat dolor</a></li>
-					<li><a href="#">Amet ornare hendrerit lectus</a></li>
-					<li><a href="#">Consequat lorem phasellus</a></li>
-					<li><a href="#">Amet turpis feugiat amet</a></li>
-				</ul>
-			</div>
-			<div class="sbox2">
-				<h2>Integer gravida</h2>
-				<ul class="style2">
-					<li><a href="#">Semper quis egetmi dolore</a></li>
-					<li><a href="#">Quam turpis feugiat dolor</a></li>
-					<li><a href="#">Amet ornare hendrerit lectus</a></li>
-					<li><a href="#">Consequat lorem phasellus</a></li>
-					<li><a href="#">Amet turpis feugiat amet</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="copyright">
-	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
-</div>
+ //信息显示框（用于显示中间人名）
+<input type="text" id="name" value="张三" 
+style="width: 250px;height: 50px;border: 2px solid black;text-align: center;
+margin-left:450px;margin-top: 100px;background-color: red;color: white; font-size: 26px">
+ //开始按钮
+<input type="button" id="start" value="开始" style="width: 70px;height: 35px; margin-left: 100px" >
+ //结束按钮
+<input type="button" id="stop" value="结束" style="width: 70px;height: 35px;">
 </body>
 </html>
